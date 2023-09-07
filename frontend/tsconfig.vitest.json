@@ -4,6 +4,13 @@
   "compilerOptions": {
     "composite": true,
     "lib": [],
-    "types": ["node", "jsdom"]
+    "types": ["node", "jsdom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+     // so i added alias here and it works now for ts files 
+     // somewhat very wierd but it works kinda , investigate later
+     // if we are still having issues with this
   }
 }
