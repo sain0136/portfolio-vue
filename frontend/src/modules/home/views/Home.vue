@@ -7,6 +7,7 @@ export default {
 <script setup lang="ts">
 import { useLanguage } from "@/languages/useLanguage";
 import GenericButton from "@/components/button/GenericButton.vue";
+import ProfileCard from "@/components/profilecard/ProfileCard.vue";
 const { langTranslations, setLanguage, languagePref } = useLanguage();
 // Methods
 const changeLanguage = () => {
@@ -15,7 +16,7 @@ const changeLanguage = () => {
 };
 </script>
 <template>
-  <section class="flex justify-center m-5">
+  <section class="flex flex-col items-center m-5">
     <GenericButton
       @click="changeLanguage()"
       :button-text="
@@ -24,6 +25,9 @@ const changeLanguage = () => {
           : langTranslations.french
       "
     />
+    <div class="mt-10">
+      <ProfileCard />
+    </div>
   </section>
 </template>
 

@@ -6,6 +6,8 @@ export interface Translation {
   home: string;
   name: string;
   demoText: string;
+  jobTitle: string;
+  emptyProfileImage: string;
 }
 
 export const translations: Record<string, Translation> = {
@@ -16,7 +18,9 @@ export const translations: Record<string, Translation> = {
     english: "English",
     home: "Home",
     name: "Jean Sebastien Saint Rose",
-    demoText:"This the start !"
+    demoText: "This the start !",
+    jobTitle: "Full-Stack Software Developer",
+    emptyProfileImage: "No profile image",
   },
   fr: {
     welcome: "Bienvenue",
@@ -25,6 +29,8 @@ export const translations: Record<string, Translation> = {
     english: "Anglais",
     home: "Accueil",
     name: "Jean Sebastien Saint Rose",
-    demoText:"C'est le début !"
+    demoText: "C'est le début !",
+    jobTitle: "Développeur logiciel Full-Stack",
+    emptyProfileImage: "Pas d'image de profil",
   },
 };
