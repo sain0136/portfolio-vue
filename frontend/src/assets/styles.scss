@@ -1,0 +1,46 @@
+@import "../assets/base";
+@import "../assets/variables";
+
+// demo code
+.example_h1 {
+  font-size: 2rem !important;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: blueviolet;
+}
+
+h2 {
+  font-size: larger;
+}
+
+.blocks {
+  background-color: $primary;
+}
+
+.blocks2 {
+  background-color: $secondary;
+}
+
+.blocks3 {
+  background-color: $accent;
+}
+
+.blocks4 {
+  background-color: $primary-dark;
+}
+
+// production code
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+}
