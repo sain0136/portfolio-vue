@@ -8,7 +8,11 @@ export default {
 import { useLanguage } from "@/languages/useLanguage";
 import GenericButton from "@/components/button/GenericButton.vue";
 import ProfileCard from "@/components/profilecard/ProfileCard.vue";
+import AboutSection from "@/modules/home/components/AboutSection.vue";
+
+// Data
 const { langTranslations, setLanguage, languagePref } = useLanguage();
+
 // Methods
 const changeLanguage = () => {
   const language = languagePref.value === "en" ? "fr" : "en";
@@ -29,46 +33,8 @@ const changeLanguage = () => {
       />
     </div>
     <ProfileCard />
-    <div class="base-container flex flex-col gap-4 justify-end items-center">
-      <div class="format inner-container">
-        <div class="content flex justify-between">
-          <div class="flex flex-col flex-1 gap-4">
-            <span class="text-custom-primary">{{
-              langTranslations.aboutMeHeader
-            }}</span>
-            <h1 class="about text-near-white">
-              {{ langTranslations.aboutMeText }}
-            </h1>
-            <p>
-              {{ langTranslations.aboutMeTextSub }}
-            </p>
-          </div>
-          <div class="flex flex-col flex-1 items-end">
-            <GenericButton
-              class="text-near-white"
-              :button-text="langTranslations.contactMeText"
-            />
-            <img
-              class="rounded-sm border-black"
-              src="/images/homepage_image.jpg"
-              alt="home image"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <AboutSection />
   </section>
 </template>
 
-<style lang="scss" scoped>
-.about {
-  width: 75%;
-  font-size: 53px;
-  line-height: 74px;
-}
-
-.inner-container {
-  padding-bottom: 0;
-  margin-top: 15%;
-}
-</style>
+<style lang="scss" scoped></style>
