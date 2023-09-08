@@ -8,6 +8,9 @@ export interface Translation {
   demoText: string;
   jobTitle: string;
   emptyProfileImage: string;
+  aboutMeHeader: string;
+  contactMeText: string;
+  aboutMeText?: string;
 }
 
 export const translations: Record<string, Translation> = {
@@ -21,6 +24,9 @@ export const translations: Record<string, Translation> = {
     demoText: "This the start !",
     jobTitle: "Full-Stack Software Developer",
     emptyProfileImage: "No profile image",
+    aboutMeHeader: "About me",
+    contactMeText: "Contact me",
+    aboutMeText: "Who am I? A passionate software developer based in Ottawa."
   },
   fr: {
     welcome: "Bienvenue",
@@ -32,5 +38,8 @@ export const translations: Record<string, Translation> = {
     demoText: "C'est le début !",
     jobTitle: "Développeur logiciel Full-Stack",
     emptyProfileImage: "Pas d'image de profil",
+    aboutMeHeader: "À propos de moi",
+    contactMeText: "Contactez-moi",
+    aboutMeText: "Qui suis-je? Un développeur logiciel passionné basé à Ottawa."
   },
 };
