@@ -40,10 +40,7 @@ const changeLanguage = () => {
               {{ langTranslations.aboutMeText }}
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              corporis consectetur nihil deserunt. Aliquam, culpa, dolor, ab
-              nesciunt quod possimus non libero vel sed esse labore fugiat
-              delectus inventore consequatur.
+              {{ langTranslations.aboutMeTextSub }}
             </p>
           </div>
           <div class="flex flex-col flex-1 items-end">
@@ -72,6 +69,6 @@ const changeLanguage = () => {
 
 .inner-container {
   padding-bottom: 0;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 </style>
