@@ -20,7 +20,7 @@ jobs:
 
     - name: Deploy Portfolio
       run: |
-        ssh -i id_rsa ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} <<'ENDSSH'
+        ssh -tt -i id_rsa ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} <<'ENDSSH'
           cd /home/admin/productionrepos/portfolio-vue/
           git stash
           git pull
