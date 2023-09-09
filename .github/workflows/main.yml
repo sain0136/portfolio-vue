@@ -31,7 +31,7 @@ jobs:
           cd /var/www/html
           BUILD_DIR="/var/www/html/dist"
           if [ -d "$BUILD_DIR" ]; then
-            rm -r "$BUILD_DIR"
+           sudo rm -r "$BUILD_DIR"
           fi
-          mv /home/admin/productionrepos/portfolio-vue/frontend/dist /var/www/html
+          sudo mv /home/admin/productionrepos/portfolio-vue/frontend/dist /var/www/html
         ENDSSH
