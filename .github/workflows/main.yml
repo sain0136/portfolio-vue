@@ -17,5 +17,5 @@ jobs:
         chmod 600 id_rsa
         ssh-keyscan -t rsa ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
     - name: Execute Command
-      run: ssh -i id_rsa ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} "echo 'Creating test directory' && mkdir ~/test"
+      run: ssh -i id_rsa ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} "echo 'Creating test directory' && sudo mkdir ~/test"
 
