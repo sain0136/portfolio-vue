@@ -20,7 +20,8 @@ jobs:
 
     - name: Deploy Portfolio
       run: |
-        ssh -tt -i id_rsa ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} <<'ENDSSH'
+        ssh -i id_rsa ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} <<'ENDSSH'
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S sh -c '
           cd /home/admin/productionrepos/portfolio-vue/
           git stash
           git pull
@@ -31,7 +32,9 @@ jobs:
           cd /var/www/html
           BUILD_DIR="/var/www/html/dist"
           if [ -d "$BUILD_DIR" ]; then
-            rm -r "$BUILD_DIR"
+            sudo rm -r "$BUILD_DIR"
           fi
-           mv /home/admin/productionrepos/portfolio-vue/frontend/dist /var/www/html
+          sudo mv /home/admin/productionrepos/portfolio-vue/frontend/dist /var/www/html
+          # Add more sudo commands here if needed
+          '
         ENDSSH
