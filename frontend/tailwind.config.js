@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     "./node_modules/flowbite/**/*.js",
+    "node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -25,6 +26,7 @@ export default {
         info: "#379AE6",
         "lighter-background": "#282828",
         "background-color": "#161616",
+        "container-background-color": "#171A1FFF",
       },
     },
   },
