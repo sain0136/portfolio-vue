@@ -4,11 +4,12 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
     - name: Setup SSH
       run: |
         mkdir -p ~/.ssh
@@ -16,6 +17,21 @@ jobs:
         echo "${{ secrets.SSH_KEY }}" > id_rsa
         chmod 600 id_rsa
         ssh-keyscan -t rsa ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-    - name: Execute Command
-      run: ssh -i id_rsa ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} "echo 'Creating test directory' && mkdir ~/test"
 
+    - name: Deploy Portfolio
+      run: |
+        ssh -i id_rsa ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} <<'ENDSSH'
+          cd /home/admin/productionrepos/portfolio-vue/
+          git stash
+          git pull
+          cd frontend
+          npm install
+          chmod -R a+x node_modules
+          npm run build-only
+          cd /var/www/html
+          BUILD_DIR="/var/www/html/dist"
+          if [ -d "$BUILD_DIR" ]; then
+            rm -r "$BUILD_DIR"
+          fi
+          mv /home/admin/productionrepos/portfolio-vue/frontend/dist /var/www/html
+        ENDSSH
