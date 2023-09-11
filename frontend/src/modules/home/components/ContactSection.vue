@@ -40,11 +40,12 @@ const socialMediaLinks: socialMediaLinksType[] = [
 <template>
   <section class="base-container mt-2">
     <div class="flex justify-center flex-col m-auto inner-container">
+
       <div class="flex-1">
         <ContactForm />
       </div>
       <div class="links-container flex-1 flex flex-col items-end">
-        <span class="format self-center">{{
+        <span class="format self-center mr-8 text-custom-primary">{{
           langTranslations.connectWithMe
         }}</span>
         <div class="socials mt-2 w-full">
