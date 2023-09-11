@@ -29,6 +29,7 @@ export interface Translation {
   formContactMessageErrorLength: string;
   formGenericRequiredError: string;
   formContactSubmit: string;
+  mySkills: string;
 }
 
 export const translations: Record<string, Translation> = {
@@ -65,6 +66,7 @@ export const translations: Record<string, Translation> = {
       "Your message must be at least 10 characters long",
     formGenericRequiredError: "This field is required",
     formContactSubmit: "Submit",
+    mySkills: "My Skills",
   },
   fr: {
     welcome: "Bienvenue",
@@ -100,5 +102,6 @@ export const translations: Record<string, Translation> = {
       "Votre message doit contenir au moins 10 caractères",
     formGenericRequiredError: "Ce champ est obligatoire",
     formContactSubmit: "Envoyer",
+    mySkills: "Mes compétences",
   },
 };
